@@ -1,5 +1,5 @@
 const express = require("express");
-cors = require('cors');
+const cors = require('cors');
 const axios = require('axios');
 const app = express();
 const port = 3000;
@@ -52,7 +52,7 @@ async function getReputationScore(ipAddress) {
   try {
     const response = await axios.get(
         `https://signals.api.auth0.com/v2.0/ip/${ipAddress}`,
-        {headers: {"X-Auth-Token": "b123cf95-c2e3-4ebf-81ae-40e537ac59d6"}}
+        {headers: {"X-Auth-Token": "YOUR-API-KEY"}}
       );
 
     return response.data.fullip.score;
